@@ -7,8 +7,8 @@ function App() {
   return (
     <Container fluid>
       <Header />
-      <main>
-        
+      <main className="py-3">
+        Hi There
       </main>
       <Footer />
     </Container>
