@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Nav, Navbar, Offcanvas } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import { ShoppingCartOutlined, PersonOutlineOutlined } from '@mui/icons-material';
 
 const Header = () => {
