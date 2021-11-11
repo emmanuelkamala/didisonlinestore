@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import Product from '../components/product/Product';
 import { listProducts } from '../actions/productActions'
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 
 const Homescreen = () => {
   const dispatch = useDispatch();
@@ -17,8 +19,8 @@ const Homescreen = () => {
   return (
     <div>
       <h3>Best Selling Products</h3>
-      { loading ? (<h2>Loading...</h2>) 
-        : error ? (<h3>{error}</h3>)
+      { loading ? (<Loader />) 
+        : error ? (<Message variant='danger'>{error}</Message>)
         : (
           <Row>
             {
