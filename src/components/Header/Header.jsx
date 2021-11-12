@@ -7,18 +7,18 @@ const Header = () => {
   return (
     <>
      <Navbar collapseOnSelect expand="lg" bg="light">
-       <Link to="/">
+       <Nav.Link as={Link} to="/">
         <Navbar.Brand>Didi's Online Store</Navbar.Brand>
-       </Link>
+       </Nav.Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="me-auto">
-          <Link to="/cart">
-            <Nav.Link><ShoppingCartOutlined />Cart</Nav.Link>
-          </Link>
-          <Link to="/login">
-            <Nav.Link><PersonOutlineOutlined />Sign In</Nav.Link>
-          </Link>
+          <Nav.Link as={Link} to="/cart">
+            <ShoppingCartOutlined />Cart
+          </Nav.Link>
+          <Nav.Link as={Link} to="/login">
+            <PersonOutlineOutlined />Sign In
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
      </Navbar>
