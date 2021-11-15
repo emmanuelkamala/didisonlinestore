@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Row, Col, Button, Form } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import Message from '../components/Message';
@@ -7,7 +7,6 @@ import Loader from '../components/Loader';
 import { getUserDetails } from '../actions/userActions';
 
 const ProfileScreen = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -29,11 +28,11 @@ const ProfileScreen = () => {
       if(!user.name){
         dispatch(getUserDetails('profile'));
       } else {
-        setName(user.name);
-        setEmail(user.email);
+        setName(user.name)
+        setEmail(user.email)
       }
     }
-  }, [navigate, userInfo, dispatch])
+  }, [navigate, userInfo, dispatch, user])
 
   const submitHandler = e => {
     e.preventDefault();
@@ -77,7 +76,8 @@ const ProfileScreen = () => {
             <Form.Control 
               type='password' 
               placeholder='Enter password' 
-              value={password} onChange={(e)=> setPassword(e.target.value)}
+              value={password} 
+              onChange={(e)=> setPassword(e.target.value)}
             />
           </Form.Group>
 

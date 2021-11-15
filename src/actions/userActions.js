@@ -1,5 +1,6 @@
 import axios from "axios";
 import { 
+  USER_DETAILS_FAIL,
   USER_DETAILS_REQUEST, 
   USER_DETAILS_SUCCESS, 
   USER_LOGIN_FAIL, 
@@ -105,7 +106,7 @@ export const getUserDetails = ( id ) => async (dispatch, getState) => {
 
   } catch (error) {
       dispatch({ 
-        type: USER_REGISTER_FAIL, 
+        type: USER_DETAILS_FAIL, 
         payload: error.response && error.response.data.message
         ? error.response.data.message 
         : error.message
