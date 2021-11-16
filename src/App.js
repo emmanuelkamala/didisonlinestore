@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
+import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import ProductScreen from './screens/ProductScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
@@ -20,6 +21,7 @@ function App() {
           <Container>
             <Routes>
               <Route path='shipping' element = { <ShippingScreen /> } />
+              <Route path='payment' element = { <PaymentMethodScreen /> } />
               <Route path='login' element = { <LoginScreen /> } />
               <Route path='register' element = { <RegisterScreen /> } />
               <Route path='profile' element = { <ProfileScreen /> } />
