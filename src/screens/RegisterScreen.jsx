@@ -18,14 +18,13 @@ const RegisterScreen = () => {
   const dispatch = useDispatch();
 
   const userRegister = useSelector(state => state.userRegister);
-
   const { loading, error, userInfo } = userRegister;
 
   const redirect = location.search ? location.search.split('=')[1] : '/';
 
   useEffect(() => {
     if (userInfo){
-      navigate('/redirect')
+      navigate(redirect)
     }
   }, [navigate, redirect, userInfo])
 
@@ -48,11 +47,11 @@ const RegisterScreen = () => {
         <Form.Group controlId='name' className='my-2'>
           <Form.Label>Name</Form.Label>
           <Form.Control 
-            type='text' 
+            type='name' 
             placeholder='Enter name' 
             value={name} 
             onChange={(e)=> setName(e.target.value)}
-          />
+          ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='email' className='my-2'>
@@ -62,7 +61,7 @@ const RegisterScreen = () => {
             placeholder='Enter email' 
             value={email} 
             onChange={(e)=> setEmail(e.target.value)}
-          />
+          ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='password' className='my-2'>
@@ -71,7 +70,7 @@ const RegisterScreen = () => {
             type='password' 
             placeholder='Enter password' 
             value={password} onChange={(e)=> setPassword(e.target.value)}
-          />
+          ></Form.Control>
         </Form.Group>
 
         <Form.Group controlId='confirmPassword' className='my-2'>
@@ -81,7 +80,7 @@ const RegisterScreen = () => {
             placeholder='Confirm password' 
             value={confirmPassword} 
             onChange={(e)=> setConfirmPassword(e.target.value)}
-          />
+          ></Form.Control>
         </Form.Group>
 
         <Button 
