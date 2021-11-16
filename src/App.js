@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
+import OrderScreen from './screens/OrderScreen';
 import PaymentMethodScreen from './screens/PaymentMethodScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -30,6 +31,9 @@ function App() {
               <Route path='product/:id' element = { <ProductScreen /> } />
               <Route path='cart' element = { <CartScreen /> }>
                 <Route path=':id' element = { <CartScreen /> } />
+              </Route>
+              <Route path='order' element = { <OrderScreen /> }>
+                <Route path=':id' element = { <OrderScreen /> } />
               </Route>
               <Route path='' element = { <HomeScreen /> }  />
             </Routes>
