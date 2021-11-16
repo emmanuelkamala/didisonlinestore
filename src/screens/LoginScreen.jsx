@@ -15,14 +15,13 @@ const LoginScreen = () => {
   const dispatch = useDispatch();
 
   const userLogin = useSelector(state => state.userLogin);
-
   const { loading, error, userInfo } = userLogin;
 
   const redirect = location.search ? location.search.split('=')[1] : '/';
 
   useEffect(() => {
     if (userInfo){
-      navigate('/redirect')
+      navigate(redirect)
     }
   }, [navigate, redirect, userInfo])
 
@@ -39,14 +38,30 @@ const LoginScreen = () => {
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email' className='my-2'>
           <Form.Label>Email Address</Form.Label>
-          <Form.Control type='email' placeholder='Enter email' value={email} onChange={(e)=> setEmail(e.target.value)}></Form.Control>
+          <Form.Control 
+            type='email' 
+            placeholder='Enter email' 
+            value={email} 
+            onChange={(e)=> setEmail(e.target.value)}
+          />
         </Form.Group>
         <Form.Group controlId='password' className='my-2'>
           <Form.Label>Password</Form.Label>
-          <Form.Control type='password' placeholder='Enter password' value={password} onChange={(e)=> setPassword(e.target.value)}></Form.Control>
+          <Form.Control 
+            type='password' 
+            placeholder='Enter password' 
+            value={password} 
+            onChange={(e)=> setPassword(e.target.value)}
+          />
         </Form.Group>
 
-        <Button type='submit' variant='primary' className='my-2'>Sign In</Button>
+        <Button 
+          type='submit' 
+          variant='primary' 
+          className='my-2'
+        >
+          Sign In
+        </Button>
       </Form>
 
       <Row className='py-3'>
