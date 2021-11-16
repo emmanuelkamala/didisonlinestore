@@ -1,5 +1,4 @@
 import asyncHandler from 'express-async-handler';
-import PlaceOrderScreen from '../../src/screens/PlaceOrderScreen.jsx';
 import Order from '../models/orderModel.js';
 
 const addOrderItems = asyncHandler(async (req, res) => {
