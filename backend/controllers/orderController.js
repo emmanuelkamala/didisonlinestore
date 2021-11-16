@@ -1,4 +1,5 @@
 import asyncHandler from 'express-async-handler';
+import PlaceOrderScreen from '../../src/screens/PlaceOrderScreen.jsx';
 import Order from '../models/orderModel.js';
 
 const addOrderItems = asyncHandler(async (req, res) => {
@@ -15,7 +16,7 @@ const addOrderItems = asyncHandler(async (req, res) => {
   if (orderItems && orderItems.length === 0){
     res.status(404);
     throw new Error('No order items');
-    return
+    return;
   } else {
     const order = new Order({
       orderItems, 
@@ -33,3 +34,5 @@ const addOrderItems = asyncHandler(async (req, res) => {
     res.status(201).json(createdOrder);
   }
 })
+
+export { addOrderItems };
